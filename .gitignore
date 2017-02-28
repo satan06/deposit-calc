@@ -33,3 +33,5 @@
 *.dSYM/
 *.su
 
+# Makefiles
+*.mkfiles/
