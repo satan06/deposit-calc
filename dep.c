@@ -1,53 +1,24 @@
 #include <stdio.h>
+#include "prot.h"
 
 int main() {
 
-	int income, data, sum;
+	int income, data, depRes;
+	int forUserQuit;
 	
+	printf("\n");
 	printf("Enter your income and data: ");
 	scanf("%d""%d", &income, &data);
 
-	if (income < 10000 || (data < 0 || data > 365)) {
-        printf("Entered information is incorrect. Minimal income value is 10000,\n");
-        printf("deposit data shouldn't be more than 365 days.\n");
-    }
-    else {
-		if(income <= 100000) {
-			if(data <= 30) {
-				sum = income - income / 10;
-				printf("Your deposit is: %d\n", sum);
-			}
-			else if(data <= 120) {
-				sum = income + income * 2 / 100;
-				printf("Your deposit is: %d\n", sum);
-			}
-			else if(data <= 240) {
-				sum = income + income * 6 / 100;
-				printf("Your deposit is: %d\n", sum);
-			}
-			else {
-				sum = income + income * 12 / 100;
-				printf("Your deposit is: %d\n", sum);
-			}
-		}
-		else {
-        	if(data <= 30) {
-            	sum = income - income / 10;
-            	printf("Your deposit is: %d\n", sum);
-        	}
-        	else if(data <= 120) {
-            	sum = income + income * 3 / 100;
-            	printf("Your deposit is: %d\n", sum);
-        	}
-        	else if(data <= 240) {
-            	sum = income + income * 8 / 100;
-            	printf("Your deposit is: %d\n", sum);
-        	}
-        	else {
-            	sum = income + income * 15 / 100;
-            	printf("Your deposit is: %d\n", sum);
-        	}
-		}
+	if ( valid_dat(income, data) ) {
+		printf("Your deposit is: %d\n", (depRes = deposit_calc(income, data)) );
+	}
+	else {
+    	printf("Entered information is incorrect. Check your info:\n");
+    	printf("\t1. Minimal income value is 10000 \n");
+   		printf("\t2. Deposit data shouldn't be more than 365 days.\n");
+   		printf("Press any key to quit: ");
+   		scanf("%d", &forUserQuit);
 	}
 	return 0;
 }
