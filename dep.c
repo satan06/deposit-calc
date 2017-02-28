@@ -7,41 +7,47 @@ int main() {
 	printf("Enter your income and data: ");
 	scanf("%d""%d", &income, &data);
 
-	if(income <= 100000) {
-		if(data <= 30) {
-			sum = income - income / 10;
-			printf("Your deposit is: %d", sum);
-		}
-		else if(data <= 120) {
-			sum = income + income * 2 / 100;
-			printf("Your deposit is: %d", sum);
-		}
-		else if(data <= 240) {
-			sum = income + income * 6 / 100;
-			printf("Your deposit is: %d", sum);
+	if (income < 10000 || (data < 0 || data > 365)) {
+        printf("Entered information is incorrect. Minimal income value is 10000,\n");
+        printf("deposit data shouldn't be more than 365 days.\n");
+    }
+    else {
+		if(income <= 100000) {
+			if(data <= 30) {
+				sum = income - income / 10;
+				printf("Your deposit is: %d\n", sum);
+			}
+			else if(data <= 120) {
+				sum = income + income * 2 / 100;
+				printf("Your deposit is: %d\n", sum);
+			}
+			else if(data <= 240) {
+				sum = income + income * 6 / 100;
+				printf("Your deposit is: %d\n", sum);
+			}
+			else {
+				sum = income + income * 12 / 100;
+				printf("Your deposit is: %d\n", sum);
+			}
 		}
 		else {
-			sum = income + income * 12 / 100;
-			printf("Your deposit is: %d", sum);
+        	if(data <= 30) {
+            	sum = income - income / 10;
+            	printf("Your deposit is: %d\n", sum);
+        	}
+        	else if(data <= 120) {
+            	sum = income + income * 3 / 100;
+            	printf("Your deposit is: %d\n", sum);
+        	}
+        	else if(data <= 240) {
+            	sum = income + income * 8 / 100;
+            	printf("Your deposit is: %d\n", sum);
+        	}
+        	else {
+            	sum = income + income * 15 / 100;
+            	printf("Your deposit is: %d\n", sum);
+        	}
 		}
-	}
-	else {
-        if(data <= 30) {
-            sum = income - income / 10;
-            printf("Your deposit is: %d", sum);
-        }
-        else if(data <= 120) {
-            sum = income + income * 3 / 100;
-            printf("Your deposit is: %d", sum);
-        }
-        else if(data <= 240) {
-            sum = income + income * 8 / 100;
-            printf("Your deposit is: %d", sum);
-        }
-        else {
-            sum = income + income * 15 / 100;
-            printf("Your deposit is: %d", sum);
-        }
 	}
 	return 0;
 }
