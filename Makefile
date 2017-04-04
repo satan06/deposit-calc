@@ -1,6 +1,18 @@
-func.o: func.c
-						gcc -c -o func.o func.c
-dep.o: dep.c
-						gcc -c -o dep.o dep.c
-depocalc: func.o dep.o
-						gcc -Wall -o depocalc func.o dep.o 
+CC := gcc
+CFLAGS = -c -Wall -Werror
+EXE := bin/deposit
+
+all: src/main.c src/deposit.c $(EXE)
+
+$(EXE): build/main.o build/deposit.o
+		$(CC) build/main.o build/deposit.o -o $@
+
+build/main.o: src/main.c src/deposit.h
+		$(CC) $(CFLAGS) src/main.c -o $@   
+
+build/deposit.o: src/deposit.c src/deposit.h
+		$(CC) $(CFLAGS) src/deposit.c -o $@   
+
+.PHONY: all clean
+clean:
+		rm -rf build/*.o   
