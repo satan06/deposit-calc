@@ -10,9 +10,9 @@ $(EXE): build/main.o build/deposit.o
 build/main.o: src/main.c src/deposit.h
 		$(CC) $(CFLAGS) src/main.c -o $@   
 
-build/deposit.o: src/deposit.c src/deposit.h
+build/deposit.o: src/deposit.c 
 		$(CC) $(CFLAGS) src/deposit.c -o $@   
 
 .PHONY: all clean
 clean:
-		rm -rf build/*.o   
+		rm -rf build/*.o 
