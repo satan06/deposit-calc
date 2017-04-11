@@ -1,0 +1,7 @@
+language: c
+
+install: 
+  - make && make clean
+
+script:
+  - bin/deposit-calc-test 
