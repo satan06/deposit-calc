@@ -1,3 +1,6 @@
+# Definitely have to rewrite with functions
+# for better understanding
+
 CC := gcc
 CFLAGS := -c -Wall -Werror
 LFLAGS := -I thirdparty -I src -c 
