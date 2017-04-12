@@ -11,7 +11,8 @@ CTEST(logic_suite, valid_all_wrong)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_FALSE(result);
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(logic_suite, valid_all_wrong_else)
@@ -24,7 +25,8 @@ CTEST(logic_suite, valid_all_wrong_else)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_FALSE(result);
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(logic_suite, valid_income_wrong)
@@ -37,7 +39,8 @@ CTEST(logic_suite, valid_income_wrong)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_FALSE(result);
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(logic_suite, valid_data_wrong)
@@ -50,7 +53,8 @@ CTEST(logic_suite, valid_data_wrong)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_FALSE(result);
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(logic_suite, valid_data_wrong_else)
@@ -63,7 +67,8 @@ CTEST(logic_suite, valid_data_wrong_else)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_FALSE(result);
+    const int expected = 0;
+    ASSERT_EQUAL(expected, result);
 }
 
 CTEST(logic_suite, valid_all_right)
@@ -76,5 +81,6 @@ CTEST(logic_suite, valid_all_right)
     const int result = valid_dat(income_test, data_test);
 
     // Then
-    ASSERT_TRUE(result);
+    const int expected = 1;
+    ASSERT_EQUAL(expected, result);
 }
