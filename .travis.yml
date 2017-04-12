@@ -7,9 +7,7 @@ script:
   - bin/deposit-calc-test
 
 after_success:
-  - $TRAVIS_TEST_RESULT
   - make clean
 
-after_failure:
-  - $TRAVIS_TEST_RESULT 
+after_failure: 
   - make clean
