@@ -7,7 +7,7 @@ LFLAGS := -I thirdparty -I src -c
 EXE := bin/deposit-calc
 EXE_TEST := bin/deposit-calc-test
 
-all: src/main.c src/deposit.c $(EXE) $(EXE_TEST)
+all: $(EXE) $(EXE_TEST)
 
 $(EXE): build/src/main.o build/src/deposit.o
 		$(CC) build/src/main.o build/src/deposit.o -o $@
